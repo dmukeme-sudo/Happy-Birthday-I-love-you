@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 19th Birthday Vanessa! ✨</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe6ed 0%, #ffb6c1 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+            perspective: 1200px;
+        }
+
+        /* Floating background elements */
+        .bg-heart {
+            position: absolute;
+            color: rgba(255, 64, 129, 0.3);
+            font-size: 24px;
+            animation: floatUp 6s infinite ease-in;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Card Setup */
+        .card-wrapper {
+            position: relative;
+            width: 360px;
+            height: 520px;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-wrapper.open {
+            transform: rotateY(-180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            backface-visibility: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        /* Front Cover */
+        .card-front {
+            background: linear-gradient(145deg, #ff4081, #d81b60);
+            border: 3px solid #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            z-index: 2;
+        }
+
+        .card-front h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .card-front p {
+            font-size: 14px;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        .seal {
+            width: 70px;
+            height: 70px;
+            background: #ffd700;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            margin-top: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+
+        /* Inside Letter */
+        .card-back {
+            background: #ffffff;
+            transform: rotateY(180deg);
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            border: 2px solid #ff80ab;
+            overflow-y: auto;
+        }
+
+        .card-back h2 {
+            color: #d81b60;
+            font-size: 17px;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 2px dashed #ff80ab;
+            padding-bottom: 10px;
+        }
+
+        .letter-content {
+            font-size: 13.5px;
+            color: #444;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .letter-content p {
+            margin-bottom: 12px;
+        }
+
+        .letter-content strong {
+            color: #d81b60;
+        }
+
+        .signature {
+            text-align: center;
+            font-weight: bold;
+            color: #d81b60;
+            font-size: 16px;
+            margin-top: 15px;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Background Hearts -->
+    <div class="bg-heart" style="left: 15%; animation-delay: 0s;">💖</div>
+    <div class="bg-heart" style="left: 35%; animation-delay: 2s;">❤️</div>
+    <div class="bg-heart" style="left: 65%; animation-delay: 1s;">✨</div>
+    <div class="bg-heart" style="left: 85%; animation-delay: 3s;">💗</div>
+
+    <!-- 3D Card -->
+    <div class="card-wrapper" id="card" onclick="openCard()">
+        <!-- Front Cover -->
+        <div class="card-front">
+            <h1>Happy 19th Birthday Vanessa! 🎉</h1>
+            <p>TAP TO OPEN YOUR CARD</p>
+            <div class="seal">💌</div>
+        </div>
+
+        <!-- Inside Letter -->
+        <div class="card-back">
+            <h2>To the girl that holds my heart, Vanessa ❤️</h2>
+            <div class="letter-content">
+                <p>Honestly, I don't think I'll ever stop being grateful that I got to know you. Who would've thought that things would turn out the way they have? It's funny how life works, but God truly works in miraculous ways. We went from barely talking, to saying hi, to getting each other's socials, to going out, and now look at us, a couple. When I think about it, it's actually crazy how far we've come. I'm so happy I got to experience that little journey with you, because if there was anyone I'd want it to be with, it would be you.</p>
+                <p>This year hasn't exactly been the easiest for me. I've lost family members along the way, as well as people I thought would be there but who weren't meant to continue the journey with me. But somehow, getting to know you changed the direction of my year in ways I probably can't fully explain. You've brought me a kind of happiness and comfort I didn't even realise I needed. Thank you for always supporting me, for listening, for being there and, most importantly, for never making me feel judged. I appreciate that more than you know. Having someone I can be myself around without feeling like I have to explain or defend everything means a lot to me.</p>
+                <p>I hope you never underestimate how much you mean to me. I'm genuinely grateful for the person you are and for the memories we've already made. If there's one thing I'm certain about, it's that meeting you was one of the unexpected blessings of this year, and I wouldn't change the way our story started for anything.</p>
+                <p>I pray that God blesses you with divine long life, good health, favour and prosperity. May He continue to guide your steps, open doors that no one can shut and grant you the desires of your heart. Whatever obstacles may come your way, I pray that you overcome every single one of them in Jesus' Name. Amen. May this new chapter bring you nothing but growth, peace, happiness and endless blessings. I pray that 19 treats you beautifully and that you have countless reasons to smile.</p>
+                <p><strong>Happy 19th birthday, Vanessa.</strong> Here's to many more birthdays, more memories, more adventures and many more chapters together. I'm so grateful that out of all the ways life could have gone, ours somehow crossed paths.</p>
+                <div class="signature">I love you. ❤️</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isOpen = false;
+
+        function openCard() {
+            const card = document.getElementById('card');
+            card.classList.toggle('open');
+            isOpen = !isOpen;
+
+            if (isOpen) {
+                // Fire confetti!
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
